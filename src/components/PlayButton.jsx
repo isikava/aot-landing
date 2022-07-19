@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { ReactComponent as PlayIcon } from '../assets/play.svg';
+
 const Button = styled(motion.button)`
   width: 60px;
   height: 60px;
@@ -28,7 +30,7 @@ const PlayCircle = styled(motion.span)`
   border-radius: 50%;
 `;
 
-const PlayIcon = styled(motion.div)`
+const IconWrapper = styled(motion.div)`
   width: 35%;
   height: 35%;
   display: flex;
@@ -54,17 +56,9 @@ const circleVariants = {
 export const PlayButton = () => {
   return (
     <Button initial='initial' whileHover='hover'>
-      <PlayIcon variants={playVariants} transition={{ ease: 'easeInOut' }}>
-        <svg viewBox='0 0 22 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
-          <path
-            d='M2.19989 2.79998L18.1999 12.8L2.19989 22.8V2.79998Z'
-            stroke='white'
-            stroke-width='3'
-            stroke-miterlimit='10'
-            stroke-linecap='round'
-          />
-        </svg>
-      </PlayIcon>
+      <IconWrapper variants={playVariants} transition={{ ease: 'easeInOut' }}>
+        <PlayIcon />
+      </IconWrapper>
       <PlayCircle
         variants={circleVariants}
         transition={{ ease: 'easeInOut' }}

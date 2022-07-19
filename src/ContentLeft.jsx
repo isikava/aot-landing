@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { RiMenu2Fill } from 'react-icons/ri';
 
-import { Logo } from './components';
 import { PlayButton } from './components/PlayButton';
+import { ReactComponent as Logo } from './assets/logo.svg';
 
 const links = ['facebook', 'twitter', 'instagram', 'youtube'];
 
