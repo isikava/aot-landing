@@ -25,7 +25,7 @@ const NavBar = styled.div`
   display: flex;
   position: relative;
   margin-top: 1rem;
-  padding-left: 4.5rem;
+  padding-left: 4rem;
 
   @media only screen and (min-width: 800px) {
     margin-top: 3rem;
