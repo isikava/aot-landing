@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md';
+import { RiPlayLine } from 'react-icons/ri';
+import { motion } from 'framer-motion';
 
+// import { ReactComponent as Play } from './assets/play.svg';
 import visual2 from './assets/visual_02.png';
 import image10 from './assets/image_10-cropped.jpg';
 import image11 from './assets/image_11-cropped.jpg';
 import image12 from './assets/image_12-cropped.jpg';
 import image13 from './assets/image_13.jpg';
 
-const slides = [image10, image11, image12, image13];
+const slides = [image10, image12, image11, image13];
 
 const Wrapper = styled.div`
   flex: 1;
@@ -47,6 +50,7 @@ const Pages = styled.div``;
 
 const Controls = styled.div`
   display: flex;
+  gap: 10px;
 `;
 
 const Control = styled.button`
@@ -77,7 +81,7 @@ const ArrowBackwardIcon = styled(ArrowForwardIcon)`
 `;
 
 const Trailers = styled.div`
-  /* background: #ccc; */
+  margin-top: 2rem;
 `;
 
 const Title = styled.h2`
@@ -96,30 +100,71 @@ const Slider2 = styled.div`
   padding-left: 9px;
 `;
 
-const Slide2 = styled.div`
+const ThumbnailContainer = styled(motion.div)`
+  width: 220px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+`;
+
+const Thumbnail = styled.div`
   width: 220px;
   height: 150px;
   overflow: hidden;
   border-radius: 10px 0px 30px;
 
-  transform: translate(-9px, -9px);
   img {
     width: 101%;
     height: 101%;
     object-fit: cover;
   }
+`;
 
-  &:hover {
-    transform: translate(0);
+const ThumbnailOrder = styled.div`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0.3rem;
+  left: 0.4rem;
+
+  color: #ffffff;
+  text-shadow: 0px 4px 23px rgba(0, 0, 0, 0.74);
+  font-size: 2rem;
+
+  span {
+    font-family: var(--font-medium);
+    font-size: 18px;
+    line-height: 90%;
+    letter-spacing: -0.01em;
   }
 `;
 
-const Slide2Bg = styled.div`
+const PlayIcon = styled(RiPlayLine)`
+  font-size: 2rem;
+  color: #fff;
+`;
+
+const ThumbnailBg = styled(motion.div)`
   width: 220px;
   height: 150px;
   border-radius: 10px 0px 30px;
   background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 `;
+
+const thumbnailBg = {
+  initial: {
+    x: 9,
+    y: 9,
+  },
+  hover: {
+    x: 5,
+    y: 5,
+  },
+};
 
 export const ContentRight = () => {
   return (
@@ -144,11 +189,16 @@ export const ContentRight = () => {
         <Title>Trailers</Title>
         <Slider2>
           {slides.map((slide, i) => (
-            <Slide2Bg key={i}>
-              <Slide2>
+            <ThumbnailContainer key={i} initial='initial' whileHover='hover'>
+              <Thumbnail>
                 <img src={slide} alt='slide' />
-              </Slide2>
-            </Slide2Bg>
+              </Thumbnail>
+              <ThumbnailOrder>
+                <PlayIcon />
+                <span># {i + 1}</span>
+              </ThumbnailOrder>
+              <ThumbnailBg variants={thumbnailBg} />
+            </ThumbnailContainer>
           ))}
         </Slider2>
       </Trailers>

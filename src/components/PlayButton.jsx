@@ -44,25 +44,33 @@ const IconWrapper = styled(motion.div)`
   }
 `;
 
-const playVariants = {
-  hover: { scale: 1.1 },
+const container = {
+  hover: {
+    transition: { ease: 'easeInOut' },
+  },
 };
 
-const circleVariants = {
+const play = {
+  hover: {
+    scale: 1.1,
+  },
+};
+
+const circle = {
   initial: { rotate: 45 },
-  hover: { scale: 1.1, rotate: 225 },
+  hover: {
+    scale: 1.1,
+    rotate: 225,
+  },
 };
 
 export const PlayButton = () => {
   return (
-    <Button initial='initial' whileHover='hover'>
-      <IconWrapper variants={playVariants} transition={{ ease: 'easeInOut' }}>
+    <Button initial='initial' whileHover='hover' variants={container}>
+      <IconWrapper variants={play} transition={{ ease: 'easeInOut' }}>
         <PlayIcon />
       </IconWrapper>
-      <PlayCircle
-        variants={circleVariants}
-        transition={{ ease: 'easeInOut' }}
-      />
+      <PlayCircle variants={circle} transition={{ ease: 'easeInOut' }} />
     </Button>
   );
 };

@@ -109,6 +109,11 @@ const WatchText = styled.div`
     letter-spacing: 0.25em;
     text-transform: uppercase;
   }
+
+  &:hover {
+    text-shadow: 1px 1px 2px #000, 0 0 25px blue, 0 0 5px darkblue;
+    transition: 0.1s ease-in-out;
+  }
 `;
 
 const Description = styled.div`
