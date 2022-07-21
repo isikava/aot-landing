@@ -11,12 +11,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  height: 1024px;
+
   width: 100%;
+  height: 100vh;
+  padding-bottom: 3rem;
 
   @media only screen and (min-width: 800px) {
     width: 545px;
+    height: var(--height-hero);
     padding-right: 92px;
   }
 `;
@@ -46,21 +48,21 @@ const MenuWrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @media only screen and (min-width: 800px) {
+    align-items: flex-start;
     padding-left: 8.4rem;
   }
 `;
 
-const Title = styled.div`
-  h1 {
-    font-family: var(--font-light);
-    font-size: 4rem;
-    line-height: 90%;
-    letter-spacing: -0.01rem;
-    text-transform: uppercase;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
+const Title = styled.h1`
+  font-family: var(--font-light);
+  font-size: 4rem;
+  line-height: 90%;
+  letter-spacing: -0.01rem;
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   span {
     display: block;
@@ -75,9 +77,8 @@ const Title = styled.div`
   }
 
   @media only screen and (min-width: 800px) {
-    h1 {
-      font-size: 6rem;
-    }
+    font-size: 6rem;
+
     & span:nth-child(2) {
       font-size: 85px;
       line-height: 76px;
@@ -135,14 +136,13 @@ const Description = styled.div`
   }
 `;
 
-const Links = styled.div`
-  ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 2rem 0 4rem;
-  }
+const Links = styled.ul`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 
   a {
     font-family: var(--font-medium);
@@ -167,9 +167,7 @@ export const ContentLeft = () => {
 
       <Content>
         <Title>
-          <h1>
-            The <span>Final</span> <span>Season</span>
-          </h1>
+          The <span>Final</span> <span>Season</span>
         </Title>
 
         <Watch>
@@ -194,15 +192,13 @@ export const ContentLeft = () => {
         </Description>
 
         <Links>
-          <ul>
-            {links.map((link, i) => (
-              <li key={i}>
-                <a href='/' rel='noopener noreferrer'>
-                  {link}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {links.map((link, i) => (
+            <li key={i}>
+              <a href='/' rel='noopener noreferrer'>
+                {link}
+              </a>
+            </li>
+          ))}
         </Links>
       </Content>
     </Wrapper>

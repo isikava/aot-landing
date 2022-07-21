@@ -4,6 +4,7 @@
   --font-light: 'Rubik Light';
   --font-medium: 'Rubik Medium';
   --font-bold: 'Rubik Black';
+  --height-hero: 1024px;
 }
 
 * {

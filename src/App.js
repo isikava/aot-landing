@@ -9,9 +9,11 @@ function App() {
   return (
     <div className='app'>
       <div className='bg' />
-      <div className='container wrapper'>
-        <ContentLeft />
-        <ContentRight />
+      <div className='container'>
+        <div className='wrapper'>
+          <ContentLeft />
+          <ContentRight />
+        </div>
       </div>
       <div className='some-content'>
         <div>Some content</div>

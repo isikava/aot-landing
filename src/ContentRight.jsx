@@ -17,8 +17,14 @@ const Wrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  height: 1024px;
+  justify-content: space-between;
+
+  height: 100vh;
+  padding-bottom: 3rem;
+
+  @media only screen and (min-width: 800px) {
+    height: var(--height-hero);
+  }
 `;
 
 const Slider = styled.div`
@@ -81,7 +87,7 @@ const ArrowBackwardIcon = styled(ArrowForwardIcon)`
 `;
 
 const Trailers = styled.div`
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 `;
 
 const Title = styled.h2`
@@ -95,9 +101,6 @@ const Slider2 = styled.div`
   display: flex;
   align-items: center;
   gap: 30px;
-  height: 250px;
-  overflow: hidden;
-  padding-left: 9px;
 `;
 
 const ThumbnailContainer = styled(motion.div)`
