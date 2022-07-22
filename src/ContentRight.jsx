@@ -1,20 +1,15 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md';
+import { MdArrowForwardIos } from 'react-icons/md';
 import { RiPlayLine } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 
-// import { ReactComponent as Play } from './assets/play.svg';
+import { images } from './images';
 import visual2 from './assets/visual_02.png';
-import image10 from './assets/image_10-cropped.jpg';
-import image11 from './assets/image_11-cropped.jpg';
-import image12 from './assets/image_12-cropped.jpg';
-import image13 from './assets/image_13.jpg';
-
-const slides = [image10, image12, image11, image13];
 
 const Wrapper = styled.div`
-  flex: 1;
+  /* flex: 1; */
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,6 +23,7 @@ const Wrapper = styled.div`
 `;
 
 const Slider = styled.div`
+  /* flex: 1; */
   margin: 0 -1rem;
 
   @media only screen and (min-width: 1200px) {
@@ -37,6 +33,7 @@ const Slider = styled.div`
 
 const SliderImage = styled.div`
   width: 100%;
+  max-width: 895px;
 
   img {
     width: 100%;
@@ -49,7 +46,6 @@ const Pagination = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
-  margin-right: 1.5rem;
 `;
 
 const Pages = styled.div``;
@@ -65,15 +61,10 @@ const Control = styled.button`
   border-radius: 50%;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.2);
-  /* font-size: 1.5rem; */
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const Control2 = styled(Control)`
-  transform: scaleX(-2);
 `;
 
 const ArrowForwardIcon = styled(MdArrowForwardIos)`
@@ -86,10 +77,6 @@ const ArrowBackwardIcon = styled(ArrowForwardIcon)`
   transform: scale(-2);
 `;
 
-const Trailers = styled.div`
-  /* margin-top: 2rem; */
-`;
-
 const Title = styled.h2`
   font-family: var(--font-medium);
   line-height: 90%;
@@ -97,17 +84,23 @@ const Title = styled.h2`
   margin-bottom: 1rem;
 `;
 
-const Slider2 = styled.div`
+const Carousel = styled(motion.div)`
+  cursor: grab;
+  overflow: hidden;
+  height: 160px;
+  /* width: 600px; */
+`;
+
+const InnerCarousel = styled(motion.div)`
   display: flex;
-  align-items: center;
   gap: 30px;
 `;
 
 const ThumbnailContainer = styled(motion.div)`
-  width: 220px;
-  height: 150px;
+  min-width: 220px;
+  min-height: 150px;
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
 `;
 
 const Thumbnail = styled.div`
@@ -120,6 +113,7 @@ const Thumbnail = styled.div`
     width: 101%;
     height: 101%;
     object-fit: cover;
+    pointer-events: none;
   }
 `;
 
@@ -170,9 +164,16 @@ const thumbnailBg = {
 };
 
 export const ContentRight = () => {
+  const [width, setWidth] = useState(0);
+  const carousel = useRef();
+
+  useEffect(() => {
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  }, []);
+
   return (
     <Wrapper>
-      <Slider>
+      {/* <Slider>
         <SliderImage>
           <img src={visual2} alt='slider' />
         </SliderImage>
@@ -187,14 +188,18 @@ export const ContentRight = () => {
           </Controls>
           <Pages></Pages>
         </Pagination>
-      </Slider>
-      <Trailers>
-        <Title>Trailers</Title>
-        <Slider2>
-          {slides.map((slide, i) => (
+      </Slider> */}
+      <Title>Trailers</Title>
+      <Carousel ref={carousel}>
+        <InnerCarousel
+          drag='x'
+          dragConstraints={{ right: 0, left: -width }}
+          whileTap={{ cursor: 'grabbing' }}
+        >
+          {images.map((image, i) => (
             <ThumbnailContainer key={i} initial='initial' whileHover='hover'>
               <Thumbnail>
-                <img src={slide} alt='slide' />
+                <img src={image} alt='thumbnail' />
               </Thumbnail>
               <ThumbnailOrder>
                 <PlayIcon />
@@ -203,8 +208,8 @@ export const ContentRight = () => {
               <ThumbnailBg variants={thumbnailBg} />
             </ThumbnailContainer>
           ))}
-        </Slider2>
-      </Trailers>
+        </InnerCarousel>
+      </Carousel>
     </Wrapper>
   );
 };

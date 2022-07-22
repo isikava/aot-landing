@@ -63,6 +63,7 @@ const Title = styled.h1`
   letter-spacing: -0.01rem;
   text-transform: uppercase;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff;
 
   span {
     display: block;
@@ -98,6 +99,7 @@ const WatchText = styled.div`
   gap: 6px;
   margin-left: 1rem;
 
+  color: #fff;
   font-family: var(--font-medium);
   font-weight: 500;
   font-size: 1.5rem;

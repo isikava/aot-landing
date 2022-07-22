@@ -1,7 +1,8 @@
-import './App.css';
+import { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import './App.css';
 import { ContentLeft } from './ContentLeft';
 import { ContentRight } from './ContentRight';
 
