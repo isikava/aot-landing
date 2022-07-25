@@ -13,11 +13,11 @@ const Wrapper = styled.div`
   justify-content: space-between;
 
   width: 100%;
+  max-width: 545px;
   height: 100vh;
   padding-bottom: 3rem;
 
   @media only screen and (min-width: 800px) {
-    width: 545px;
     height: var(--height-hero);
     padding-right: 92px;
   }

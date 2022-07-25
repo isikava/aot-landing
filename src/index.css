@@ -7,15 +7,23 @@
   --height-hero: 1024px;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-}
-
 * {
   margin: 0;
   padding: 0;
+  font: inherit;
+  outline: solid 1px red;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -25,8 +33,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #000;
-  color: #fff;
 }
 
 code {
@@ -41,7 +47,8 @@ p {
   font-size: 14px;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 

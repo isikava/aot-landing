@@ -23,7 +23,6 @@ const Wrapper = styled.div`
 `;
 
 const Slider = styled.div`
-  /* flex: 1; */
   margin: 0 -1rem;
 
   @media only screen and (min-width: 1200px) {
@@ -87,7 +86,6 @@ const Title = styled.h2`
 const Carousel = styled(motion.div)`
   cursor: grab;
   overflow: hidden;
-  height: 160px;
   /* width: 600px; */
 `;
 
@@ -98,7 +96,7 @@ const InnerCarousel = styled(motion.div)`
 
 const ThumbnailContainer = styled(motion.div)`
   min-width: 220px;
-  min-height: 150px;
+  min-height: 160px;
   position: relative;
   /* cursor: pointer; */
 `;
@@ -173,7 +171,7 @@ export const ContentRight = () => {
 
   return (
     <Wrapper>
-      {/* <Slider>
+      <Slider>
         <SliderImage>
           <img src={visual2} alt='slider' />
         </SliderImage>
@@ -188,7 +186,7 @@ export const ContentRight = () => {
           </Controls>
           <Pages></Pages>
         </Pagination>
-      </Slider> */}
+      </Slider>
       <Title>Trailers</Title>
       <Carousel ref={carousel}>
         <InnerCarousel
