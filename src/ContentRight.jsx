@@ -8,17 +8,18 @@ import { images } from './images';
 import visual2 from './assets/visual_02.png';
 
 const Wrapper = styled.div`
-  /* flex: 1; */
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
+  width: 100%;
+  min-width: 0;
+  max-width: 895px;
   height: 100vh;
   padding-bottom: 3rem;
 
   @media only screen and (min-width: 800px) {
     height: var(--height-hero);
+    justify-content: space-between;
   }
 `;
 
@@ -32,7 +33,6 @@ const Slider = styled.div`
 
 const SliderImage = styled.div`
   width: 100%;
-  max-width: 895px;
 
   img {
     width: 100%;
@@ -68,25 +68,27 @@ const Control = styled.button`
 
 const ArrowForwardIcon = styled(MdArrowForwardIos)`
   color: #fff;
-  transform: scale(2);
+  font-size: 1.5rem;
 `;
 
 const ArrowBackwardIcon = styled(ArrowForwardIcon)`
   color: #fff;
-  transform: scale(-2);
+  transform: scale(-1);
 `;
 
-const Title = styled.h2`
-  font-family: var(--font-medium);
-  line-height: 90%;
-  color: #fff;
-  margin-bottom: 1rem;
+const Trailers = styled.div`
+  h2 {
+    font-family: var(--ff-medium);
+    font-size: 1.5rem;
+    line-height: 90%;
+    color: #fff;
+    margin: 1rem 0;
+  }
 `;
 
 const Carousel = styled(motion.div)`
   cursor: grab;
   overflow: hidden;
-  /* width: 600px; */
 `;
 
 const InnerCarousel = styled(motion.div)`
@@ -98,7 +100,7 @@ const ThumbnailContainer = styled(motion.div)`
   min-width: 220px;
   min-height: 160px;
   position: relative;
-  /* cursor: pointer; */
+  cursor: pointer;
 `;
 
 const Thumbnail = styled.div`
@@ -119,7 +121,7 @@ const ThumbnailOrder = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 0.3rem;
+  bottom: 1rem;
   left: 0.4rem;
 
   color: #ffffff;
@@ -127,7 +129,7 @@ const ThumbnailOrder = styled.div`
   font-size: 2rem;
 
   span {
-    font-family: var(--font-medium);
+    font-family: var(--ff-medium);
     font-size: 18px;
     line-height: 90%;
     letter-spacing: -0.01em;
@@ -187,27 +189,34 @@ export const ContentRight = () => {
           <Pages></Pages>
         </Pagination>
       </Slider>
-      <Title>Trailers</Title>
-      <Carousel ref={carousel}>
-        <InnerCarousel
-          drag='x'
-          dragConstraints={{ right: 0, left: -width }}
-          whileTap={{ cursor: 'grabbing' }}
-        >
-          {images.map((image, i) => (
-            <ThumbnailContainer key={i} initial='initial' whileHover='hover'>
-              <Thumbnail>
-                <img src={image} alt='thumbnail' />
-              </Thumbnail>
-              <ThumbnailOrder>
-                <PlayIcon />
-                <span># {i + 1}</span>
-              </ThumbnailOrder>
-              <ThumbnailBg variants={thumbnailBg} />
-            </ThumbnailContainer>
-          ))}
-        </InnerCarousel>
-      </Carousel>
+      <Trailers>
+        <h2>Trailers</h2>
+        <Carousel ref={carousel}>
+          <InnerCarousel
+            drag='x'
+            dragConstraints={{ right: 0, left: -width }}
+            whileTap={{ cursor: 'grabbing' }}
+          >
+            {images.map((image, i) => (
+              <ThumbnailContainer
+                key={i}
+                initial='initial'
+                whileHover='hover'
+                onClick={() => console.log(`clicked ${i}`)}
+              >
+                <Thumbnail>
+                  <img src={image} alt='thumbnail' />
+                </Thumbnail>
+                <ThumbnailOrder>
+                  <PlayIcon />
+                  <span># {i + 1}</span>
+                </ThumbnailOrder>
+                <ThumbnailBg variants={thumbnailBg} />
+              </ThumbnailContainer>
+            ))}
+          </InnerCarousel>
+        </Carousel>
+      </Trailers>
     </Wrapper>
   );
 };
