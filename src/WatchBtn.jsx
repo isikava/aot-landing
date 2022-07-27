@@ -42,12 +42,12 @@ const Text = styled.div`
   gap: 6px;
   margin-left: 1rem;
 
-  color: #fff;
   font-family: var(--ff-medium);
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 90%;
   letter-spacing: -0.01em;
+  color: var(--cr-text);
 
   & > span {
     font-family: var(--ff-light);

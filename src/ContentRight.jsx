@@ -23,22 +23,22 @@ const Wrapper = styled.div`
   }
 `;
 
-const Slider = styled.div`
-  margin: 0 -1rem;
-
-  @media only screen and (min-width: 1200px) {
-    margin: 0;
-  }
-`;
+const Slider = styled.div``;
 
 const SliderImage = styled.div`
   width: 100%;
+
+  /* margin: 0 -1rem; */
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
+  /* @media only screen and (min-width: 1200px) {
+    margin: 0;
+  } */
 `;
 
 const Pagination = styled.div`
@@ -51,7 +51,11 @@ const Pages = styled.div``;
 
 const Controls = styled.div`
   display: flex;
-  gap: 10px;
+  /* gap: 10px; */
+
+  & > * + * {
+    margin-left: 10px;
+  }
 `;
 
 const Control = styled.button`
@@ -72,7 +76,6 @@ const ArrowForwardIcon = styled(MdArrowForwardIos)`
 `;
 
 const ArrowBackwardIcon = styled(ArrowForwardIcon)`
-  color: #fff;
   transform: scale(-1);
 `;
 
@@ -81,7 +84,7 @@ const Trailers = styled.div`
     font-family: var(--ff-medium);
     font-size: 1.5rem;
     line-height: 90%;
-    color: #fff;
+    color: var(--cr-text);
     margin: 1rem 0;
   }
 `;

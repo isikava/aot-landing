@@ -12,7 +12,7 @@ function App() {
   return (
     <div className='app'>
       <Background img={bgImg} />
-      <Container className='flex-wrapper'>
+      <Container>
         <ContentLeft />
         <ContentRight />
       </Container>

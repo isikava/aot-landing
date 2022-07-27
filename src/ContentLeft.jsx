@@ -13,8 +13,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  /* width: 100%; */
-  /* max-width: 545px; */
   height: 100vh;
   padding-bottom: 3rem;
 
@@ -26,6 +24,7 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1200px) {
+    padding-left: 8.4rem;
     padding-right: 92px;
   }
 `;
@@ -37,8 +36,19 @@ const NavBar = styled.div`
   margin-bottom: 4rem;
   padding-left: 4rem;
 
-  @media (min-width: 1000px) {
-    padding-left: 8.4rem;
+  svg:nth-of-type(2) {
+    width: 402px;
+    height: auto;
+
+    g {
+      path {
+        stroke: red;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: 0;
   }
 `;
 
@@ -47,8 +57,8 @@ const MenuWrapper = styled.div`
   top: 0;
   left: 0;
 
-  @media (min-width: 1000px) {
-    left: 60px;
+  @media (min-width: 1200px) {
+    left: -60px;
   }
 `;
 
@@ -58,92 +68,56 @@ const Content = styled.div`
   align-items: center;
   text-align: left;
 
-  h1 {
-    font-family: var(--ff-light);
-    font-size: 4rem;
-    line-height: 90%;
-    letter-spacing: -0.01rem;
-    text-transform: uppercase;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #fff;
+  @media (min-width: 1000px) {
+    align-items: flex-start;
+  }
+`;
 
-    span {
-      display: block;
-    }
+const Title = styled.h1`
+  font-family: var(--ff-light);
+  font-size: 4rem;
+  line-height: 90%;
+  letter-spacing: -0.01rem;
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--cr-text);
 
-    & span:first-child {
-      font-family: var(--ff-bold);
-      font-style: italic;
-    }
-    & span:nth-child(2) {
-      font-family: var(--ff-medium);
-    }
-
-    @media (min-width: 1000px) {
-    }
+  span {
+    display: block;
   }
 
-  p {
-    font-family: var(--ff-light);
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 150%;
-    letter-spacing: 0.04em;
-    color: #d7ddef;
-
-    span {
-      font-family: var(--ff-medium);
-      font-weight: 500;
-      color: #fff;
-    }
+  & span:first-child {
+    font-family: var(--ff-bold);
+    font-style: italic;
+  }
+  & span:nth-child(2) {
+    font-family: var(--ff-medium);
   }
 
   @media (min-width: 1000px) {
-    align-items: flex-start;
-    padding-left: 8.4rem;
+    font-size: 6rem;
 
-    h1 {
-      font-size: 6rem;
-
-      & span:nth-child(2) {
-        font-size: 85px;
-        line-height: 76px;
-      }
+    & span:nth-child(2) {
+      font-size: 85px;
+      line-height: 76px;
     }
   }
 `;
 
-// const Watch = styled.div`
-//   display: flex;
-//   align-items: center;
-//   margin: 1.5rem 0;
-// `;
+const Description = styled.p`
+  font-family: var(--ff-light);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #d7ddef;
 
-// const WatchText = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 6px;
-//   margin-left: 1rem;
-
-//   color: #fff;
-//   font-family: var(--ff-medium);
-//   font-weight: 500;
-//   font-size: 1.5rem;
-//   line-height: 90%;
-//   letter-spacing: -0.01em;
-
-//   & > span {
-//     font-family: var(--ff-light);
-//     font-weight: 300;
-//     letter-spacing: 0.25em;
-//     text-transform: uppercase;
-//   }
-
-//   &:hover {
-//     text-shadow: 1px 1px 2px #000, 0 0 25px blue, 0 0 5px darkblue;
-//     transition: 0.1s ease-in-out;
-//   }
-// `;
+  span {
+    font-family: var(--ff-medium);
+    font-weight: 500;
+    color: var(--cr-text);
+  }
+`;
 
 const Links = styled.ul`
   width: 100%;
@@ -160,7 +134,7 @@ const Links = styled.ul`
     line-height: 90%;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--cr-text);
   }
 `;
 
@@ -177,21 +151,13 @@ export const ContentLeft = () => {
       </NavBar>
 
       <Content>
-        <h1>
+        <Title>
           The <span>Final</span> <span>Season</span>
-        </h1>
+        </Title>
 
         <WatchBtn />
 
-        {/* <Watch>
-          <PlayButton />
-          <WatchText>
-            Watch
-            <span>December 7</span>
-          </WatchText>
-        </Watch> */}
-
-        <p>
+        <Description>
           The fourth and final season of the Attack on Titan anime television
           series, titled Attack on Titan: The Final Season, is{' '}
           <span>produced by MAPPA</span>, chief directed by Jun Shishido, and
@@ -200,7 +166,7 @@ export const ContentLeft = () => {
           the series composition from <span>Yasuko Kobayashi</span>, and
           Tomohiro Kishi replaced Kyōji Asano as character designer due to the
           series switching production studios.
-        </p>
+        </Description>
 
         <Links>
           {links.map((link, i) => (
