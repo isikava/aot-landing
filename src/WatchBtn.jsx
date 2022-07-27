@@ -57,7 +57,7 @@ const Text = styled.div`
   }
 
   &:hover {
-    text-shadow: 1px 1px 2px #000, 0 0 25px blue, 0 0 5px darkblue;
+    text-shadow: var(--shadow-hover);
     transition: 0.1s ease-in-out;
   }
 `;

@@ -79,8 +79,8 @@ const Title = styled.h1`
   line-height: 90%;
   letter-spacing: -0.01rem;
   text-transform: uppercase;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: var(--cr-text);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   span {
     display: block;
@@ -127,7 +127,7 @@ const Links = styled.ul`
   flex-wrap: wrap;
   margin-top: 2rem;
 
-  a {
+  li {
     font-family: var(--ff-medium);
     font-weight: 500;
     font-size: 9px;
@@ -135,6 +135,12 @@ const Links = styled.ul`
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--cr-text);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      text-shadow: var(--shadow-hover);
+      transition: 0.1s ease-in-out;
+    }
   }
 `;
 
