@@ -32,8 +32,7 @@ const Wrapper = styled.div`
 const NavBar = styled.div`
   display: flex;
   position: relative;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
+  margin: 3rem 0;
   padding-left: 4rem;
 
   svg:nth-of-type(2) {

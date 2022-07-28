@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { Gallery } from './Gallery';
+import { Slider } from './Slider';
 import { Carousel } from './Carousel';
 
 const Wrapper = styled.div`
@@ -33,7 +33,7 @@ const Trailers = styled.div`
 export const ContentRight = () => {
   return (
     <Wrapper>
-      <Gallery />
+      <Slider />
       <Trailers>
         <h2>Trailers</h2>
         <Carousel />
