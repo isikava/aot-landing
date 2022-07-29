@@ -34,13 +34,18 @@ const SliderWrapper = styled.div`
 
 const SliderImage = styled.div`
   width: 100%;
-  display: flex;
+  aspect-ratio: 1.345;
+  background: #bebebe;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
   img {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
+    max-width: 100%;
+    /* width: 100%;
+    height: 100%; */
     object-fit: cover;
   }
 `;
@@ -99,6 +104,8 @@ export const Slider = () => {
           <motion.img
             key={page}
             src={slides[slideIndex]}
+            max-width='895'
+            max-height='665'
             custom={direction}
             variants={variants}
             initial='enter'
@@ -106,7 +113,7 @@ export const Slider = () => {
             exit='exit'
             transition={{
               x: { type: 'string', stifness: 300, damping: 300 },
-              opacity: { duration: 0.5 },
+              opacity: { duration: 0.2 },
             }}
             drag='x'
             dragConstraints={{ left: 0, right: 0 }}
@@ -117,10 +124,10 @@ export const Slider = () => {
 
       <Pagination>
         <Controls>
-          <Control onClick={() => paginate(1)}>
+          <Control onClick={() => paginate(-1)}>
             <ArrowBackwardIcon />
           </Control>
-          <Control onClick={() => paginate(-1)}>
+          <Control onClick={() => paginate(1)}>
             <ArrowForwardIcon />
           </Control>
         </Controls>

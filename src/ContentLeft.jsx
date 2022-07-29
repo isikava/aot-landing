@@ -12,14 +12,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  height: 100vh;
   padding-bottom: 3rem;
 
   @media (min-width: 800px) {
     flex: 1;
-    height: var(--height-hero);
-
     padding-right: 1rem;
   }
 
@@ -35,13 +31,22 @@ const NavBar = styled.div`
   margin: 3rem 0;
   padding-left: 4rem;
 
-  svg:nth-of-type(2) {
-    width: 402px;
-    height: auto;
+  a {
+    svg {
+      width: 100%;
+      max-width: 302px;
+      height: auto;
 
-    g {
       path {
-        stroke: red;
+        transition: 0.2s ease-in-out;
+      }
+
+      &:hover {
+        path {
+          fill: red;
+          filter: invert(0.5) sepia(1) hue-rotate(200deg) saturate(4)
+            brightness(1);
+        }
       }
     }
   }
@@ -66,6 +71,9 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: left;
+  width: 100%;
+  max-width: 25rem;
+  align-self: center;
 
   @media (min-width: 1000px) {
     align-items: flex-start;
@@ -85,18 +93,18 @@ const Title = styled.h1`
     display: block;
   }
 
-  & span:first-child {
+  & span:first-of-type {
     font-family: var(--ff-bold);
     font-style: italic;
   }
-  & span:nth-child(2) {
+  & span:nth-of-type(2) {
     font-family: var(--ff-medium);
   }
 
   @media (min-width: 1000px) {
     font-size: 6rem;
 
-    & span:nth-child(2) {
+    & span:nth-of-type(2) {
       font-size: 85px;
       line-height: 76px;
     }
@@ -150,14 +158,16 @@ export const ContentLeft = () => {
         <MenuWrapper>
           <RiMenu2Fill size={'2em'} color={'#fff'} />
         </MenuWrapper>
-        <a href='/' alt='Logo'>
+        <a href='#home' alt='Logo'>
           <Logo />
         </a>
       </NavBar>
 
       <Content>
         <Title>
-          The <span>Final</span> <span>Season</span>
+          The
+          <span>Final</span>
+          <span>Season</span>
         </Title>
 
         <WatchBtn />
@@ -176,7 +186,7 @@ export const ContentLeft = () => {
         <Links>
           {links.map((link, i) => (
             <li key={i}>
-              <a href='/' rel='noopener noreferrer'>
+              <a href='#home' rel='noopener noreferrer'>
                 {link}
               </a>
             </li>

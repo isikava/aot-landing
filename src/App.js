@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import './App.css';
-import { Container, Background } from './Common.elements';
+import { Container, HeroWrapper } from './Common.elements';
 import { ContentLeft } from './ContentLeft';
 import { ContentRight } from './ContentRight';
 import bgImg from './assets/image_19.png';
@@ -11,14 +11,17 @@ import bgImg from './assets/image_19.png';
 function App() {
   return (
     <div className='app'>
-      <Background img={bgImg} />
+      <HeroWrapper bgImg={bgImg}>
+        <Container>
+          <ContentLeft />
+          <ContentRight />
+        </Container>
+      </HeroWrapper>
       <Container>
-        <ContentLeft />
-        <ContentRight />
+        <div className='some-content'>
+          <div>Some content</div>
+        </div>
       </Container>
-      <div className='some-content'>
-        <div>Some content</div>
-      </div>
     </div>
   );
 }

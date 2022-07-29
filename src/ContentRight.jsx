@@ -7,15 +7,14 @@ import { Carousel } from './Carousel';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 
   width: 100%;
-  min-width: 0;
+  min-width: 0; // hide carousel overflow
   max-width: 895px;
-  height: 100vh;
   padding-bottom: 3rem;
 
-  @media only screen and (min-width: 800px) {
-    height: var(--height-hero);
+  @media only screen and (min-width: 1200px) {
     justify-content: space-between;
   }
 `;
