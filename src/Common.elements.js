@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const HeroWrapper = styled.div`
   position: relative;
-  min-height: 100vh;
   background: var(--gr-darkblue);
 
   &:before {
@@ -18,13 +17,6 @@ export const HeroWrapper = styled.div`
     mix-blend-mode: lighten;
     opacity: 0.3;
     transform: scaleX(-1);
-
-    @media (min-width: 800px) {
-      position: absolute;
-      height: 100%;
-      background-size: auto 115%;
-      background-position: bottom;
-    }
   }
 
   & > * {
@@ -34,6 +26,13 @@ export const HeroWrapper = styled.div`
 
   @media (min-width: 800px) {
     height: var(--height-hero);
+
+    &:before {
+      position: absolute;
+      height: 100%;
+      background-size: auto 115%;
+      background-position: bottom;
+    }
   }
 `;
 

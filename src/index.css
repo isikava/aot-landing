@@ -47,13 +47,6 @@ code {
     monospace;
 }
 
-p {
-  font-family: var(--font-light);
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-}
-
 ul,
 ol {
   list-style: none;

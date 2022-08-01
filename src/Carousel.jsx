@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { RiPlayLine } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 
-import { images } from './images';
-
 const CarouselWrapper = styled(motion.div)`
   cursor: grab;
   overflow: hidden;
+  position: relative;
+  z-index: 11;
 `;
 
 const InnerCarousel = styled(motion.div)`
@@ -82,7 +82,7 @@ const thumbnailBg = {
   },
 };
 
-export const Carousel = () => {
+export const Carousel = ({ images }) => {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
@@ -97,7 +97,7 @@ export const Carousel = () => {
         dragConstraints={{ right: 0, left: -width }}
         whileTap={{ cursor: 'grabbing' }}
       >
-        {images.map((image, i) => (
+        {images?.map((image, i) => (
           <ThumbnailContainer
             key={i}
             initial='initial'

@@ -6,7 +6,7 @@ import './App.css';
 import { Container, HeroWrapper } from './Common.elements';
 import { ContentLeft } from './ContentLeft';
 import { ContentRight } from './ContentRight';
-import bgImg from './assets/image_19.png';
+import bgImg from './assets/background.jpg';
 
 function App() {
   return (

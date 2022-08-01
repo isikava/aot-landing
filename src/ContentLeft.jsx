@@ -4,24 +4,23 @@ import { RiMenu2Fill } from 'react-icons/ri';
 
 import { WatchBtn } from './WatchBtn';
 import { ReactComponent as Logo } from './assets/logo.svg';
-
-const links = ['facebook', 'twitter', 'instagram', 'youtube'];
+import { links } from './data';
 
 const Wrapper = styled.div`
-  flex: 1 1 100vh;
+  /* flex: 1 1 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 3rem;
 
   @media (min-width: 800px) {
-    flex: 1;
+    /* flex: 1; */
     padding-right: 1rem;
   }
 
   @media (min-width: 1200px) {
     padding-left: 8.4rem;
-    padding-right: 92px;
+    padding-right: 81px;
   }
 `;
 
@@ -118,11 +117,16 @@ const Description = styled.p`
   line-height: 150%;
   letter-spacing: 0.04em;
   color: #d7ddef;
+  margin-bottom: 2rem;
 
   span {
     font-family: var(--ff-medium);
     font-weight: 500;
     color: var(--cr-text);
+  }
+
+  @media (min-width: 500px) {
+    margin-bottom: 4rem;
   }
 `;
 
@@ -132,7 +136,6 @@ const Links = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 2rem;
 
   li {
     font-family: var(--ff-medium);
@@ -186,8 +189,8 @@ export const ContentLeft = () => {
         <Links>
           {links.map((link, i) => (
             <li key={i}>
-              <a href='#home' rel='noopener noreferrer'>
-                {link}
+              <a href={link.url} rel='noopener noreferrer'>
+                {link.name || link}
               </a>
             </li>
           ))}

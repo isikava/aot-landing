@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { Slider } from './Slider';
 import { Carousel } from './Carousel';
+import { slides, carousel } from './data';
+console.log(slides);
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,7 +12,7 @@ const Wrapper = styled.div`
   justify-content: flex-end;
 
   width: 100%;
-  min-width: 0; // hide carousel overflow
+  min-width: 0; // hide overflow
   max-width: 895px;
   padding-bottom: 3rem;
 
@@ -32,10 +34,10 @@ const Trailers = styled.div`
 export const ContentRight = () => {
   return (
     <Wrapper>
-      <Slider />
+      <Slider images={slides} />
       <Trailers>
         <h2>Trailers</h2>
-        <Carousel />
+        <Carousel images={carousel} />
       </Trailers>
     </Wrapper>
   );
