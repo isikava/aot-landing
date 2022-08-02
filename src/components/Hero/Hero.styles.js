@@ -1,12 +1,43 @@
-import React from 'react';
 import styled from 'styled-components';
-import { RiMenu2Fill } from 'react-icons/ri';
 
-import { WatchBtn } from './WatchBtn';
-import { ReactComponent as Logo } from './assets/logo.svg';
-import { links } from './data';
+/* Wrappers --> */
+export const HeroWrapper = styled.div`
+  position: relative;
+  background: var(--gr-darkblue);
 
-const Wrapper = styled.div`
+  &:before {
+    position: fixed;
+    content: '';
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(${(props) => props.bgImg}) no-repeat;
+    background-size: cover;
+    background-position: 70% center;
+
+    mix-blend-mode: lighten;
+    opacity: 0.3;
+    transform: scaleX(-1);
+  }
+
+  & > * {
+    height: 100%;
+    position: relative;
+  }
+
+  @media (min-width: 800px) {
+    height: var(--height-hero);
+
+    &:before {
+      position: absolute;
+      height: 100%;
+      background-size: auto 115%;
+      background-position: bottom;
+    }
+  }
+`;
+
+export const LeftSide = styled.div`
   /* flex: 1 1 100vh; */
   display: flex;
   flex-direction: column;
@@ -24,7 +55,24 @@ const Wrapper = styled.div`
   }
 `;
 
-const NavBar = styled.div`
+export const RightSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  width: 100%;
+  min-width: 0; // hide overflow
+  max-width: 895px;
+  padding-bottom: 3rem;
+
+  @media only screen and (min-width: 1200px) {
+    justify-content: space-between;
+  }
+`;
+/* <-- Wrappers */
+
+/* Elements --> */
+export const NavBar = styled.div`
   display: flex;
   position: relative;
   margin: 3rem 0;
@@ -55,7 +103,7 @@ const NavBar = styled.div`
   }
 `;
 
-const MenuWrapper = styled.div`
+export const Menu = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -65,7 +113,7 @@ const MenuWrapper = styled.div`
   }
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +127,7 @@ const Content = styled.div`
   }
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   font-family: var(--ff-light);
   font-size: 4rem;
   line-height: 90%;
@@ -110,7 +158,7 @@ const Title = styled.h1`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   font-family: var(--ff-light);
   font-weight: 300;
   font-size: 14px;
@@ -130,7 +178,7 @@ const Description = styled.p`
   }
 `;
 
-const Links = styled.ul`
+export const Links = styled.ul`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -154,48 +202,14 @@ const Links = styled.ul`
   }
 `;
 
-export const ContentLeft = () => {
-  return (
-    <Wrapper>
-      <NavBar>
-        <MenuWrapper>
-          <RiMenu2Fill size={'2em'} color={'#fff'} />
-        </MenuWrapper>
-        <a href='#home' alt='Logo'>
-          <Logo />
-        </a>
-      </NavBar>
+export const Trailers = styled.div`
+  h2 {
+    font-family: var(--ff-medium);
+    font-size: 1.5rem;
+    line-height: 90%;
+    color: var(--cr-text);
+    margin: 1rem 0;
+  }
+`;
 
-      <Content>
-        <Title>
-          The
-          <span>Final</span>
-          <span>Season</span>
-        </Title>
-
-        <WatchBtn />
-
-        <Description>
-          The fourth and final season of the Attack on Titan anime television
-          series, titled Attack on Titan: The Final Season, is{' '}
-          <span>produced by MAPPA</span>, chief directed by Jun Shishido, and
-          directed by Yūichirō Hayashi, replacing Tetsurō Araki and Masashi
-          Koizuka respectively. Scriptwriter <span>Hiroshi Seko</span> took over
-          the series composition from <span>Yasuko Kobayashi</span>, and
-          Tomohiro Kishi replaced Kyōji Asano as character designer due to the
-          series switching production studios.
-        </Description>
-
-        <Links>
-          {links.map((link, i) => (
-            <li key={i}>
-              <a href={link.url} rel='noopener noreferrer'>
-                {link.name || link}
-              </a>
-            </li>
-          ))}
-        </Links>
-      </Content>
-    </Wrapper>
-  );
-};
+/* <-- Elements */

@@ -127,7 +127,6 @@ export const Slider = ({ images }) => {
                 paginate(-1);
               }
             }}
-            onClick={() => window.open('http://www.google.com')}
           />
         </AnimatePresence>
       </SliderImage>

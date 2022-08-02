@@ -62,12 +62,6 @@ const Text = styled.div`
   }
 `;
 
-const container = {
-  hover: {
-    // transition: { ease: 'easeInOut' },
-  },
-};
-
 const play = {
   hover: {
     scale: 1.1,
