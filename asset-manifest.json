@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/aot-landing/static/css/main.d8c4d36c.css",
-    "main.js": "/aot-landing/static/js/main.0d5a98e3.js",
-    "static/media/image_19.png": "/aot-landing/static/media/image_19.6a6c475c4944c42420b5.png",
-    "static/media/visual_02.png": "/aot-landing/static/media/visual_02.14b2b7a6b6172ba8a4c5.png",
-    "static/media/visual_03.png": "/aot-landing/static/media/visual_03.bba84810e4bc65fa9769.png",
-    "static/media/image_13.jpg": "/aot-landing/static/media/image_13.12f1f63a4c660ff6ba06.jpg",
+    "main.css": "/aot-landing/static/css/main.1047b1eb.css",
+    "main.js": "/aot-landing/static/js/main.acfa8128.js",
+    "static/media/eren.gif": "/aot-landing/static/media/eren.f91394377968ab82e79a.gif",
+    "static/media/23.jpg": "/aot-landing/static/media/23.12f1f63a4c660ff6ba06.jpg",
+    "static/media/background.jpg": "/aot-landing/static/media/background.e2ba5a0e2cc8137792ef.jpg",
     "static/media/logo.svg": "/aot-landing/static/media/logo.2093ef38e53f3dbbdac47508b9508b86.svg",
-    "static/media/image_11-cropped.jpg": "/aot-landing/static/media/image_11-cropped.24c4c1a499a09030d0ea.jpg",
-    "static/media/image_10-cropped.jpg": "/aot-landing/static/media/image_10-cropped.7b295ffe17ac6ff1f711.jpg",
-    "static/media/image_12-cropped.jpg": "/aot-landing/static/media/image_12-cropped.1aac26aa53c57c726c7e.jpg",
+    "static/media/21c.jpg": "/aot-landing/static/media/21c.24c4c1a499a09030d0ea.jpg",
+    "static/media/20c.jpg": "/aot-landing/static/media/20c.7b295ffe17ac6ff1f711.jpg",
+    "static/media/22c.jpg": "/aot-landing/static/media/22c.1aac26aa53c57c726c7e.jpg",
     "index.html": "/aot-landing/index.html",
-    "main.d8c4d36c.css.map": "/aot-landing/static/css/main.d8c4d36c.css.map",
-    "main.0d5a98e3.js.map": "/aot-landing/static/js/main.0d5a98e3.js.map"
+    "main.1047b1eb.css.map": "/aot-landing/static/css/main.1047b1eb.css.map",
+    "main.acfa8128.js.map": "/aot-landing/static/js/main.acfa8128.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8c4d36c.css",
-    "static/js/main.0d5a98e3.js"
+    "static/css/main.1047b1eb.css",
+    "static/js/main.acfa8128.js"
   ]
 }
