@@ -90,7 +90,7 @@ export const WatchBtn = () => {
       </AnimateIcon>
       <Text>
         Watch
-        <span>December 7</span>
+        <span>December&nbsp;7</span>
       </Text>
     </Wrapper>
   );
