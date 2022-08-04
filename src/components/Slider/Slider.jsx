@@ -8,7 +8,6 @@ import { Control } from './Control';
 
 const SliderWrapper = styled.div`
   width: 100%;
-  overflow: hidden;
 `;
 
 const SliderImage = styled.div`
@@ -18,6 +17,7 @@ const SliderImage = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 
   img {
     position: absolute;
@@ -38,35 +38,11 @@ const Pages = styled.div``;
 
 const Controls = styled.div`
   display: flex;
-  overflow: visible;
-  padding: 2rem;
+
   & > * + * {
     margin-left: 10px;
   }
 `;
-
-// const Control = styled(motion.button)`
-//   cursor: pointer;
-//   width: 45px;
-//   height: 45px;
-//   border-radius: 50%;
-//   background: rgba(255, 255, 255, 0.2);
-//   color: #fff;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   overflow: visible;
-
-//   svg {
-//     outline: 1px solid red;
-//   }
-// `;
-
-// const ArrowForwardIcon = styled(MdArrowForwardIos)`
-//   color: #fff;
-//   /* font-size: 1.5rem; */
-//   font-size: 3rem;
-// `;
 
 const ArrowBackwardIcon = styled(MdArrowForwardIos)`
   transform: scale(-1);
@@ -102,7 +78,6 @@ export const Slider = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images.length, page);
-  console.log(imageIndex);
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
