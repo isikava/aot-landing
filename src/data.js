@@ -17,7 +17,24 @@ export const slides = Array.from(Array(11).keys())
     cropped: gif,
   });
 
-export const carousel = [img20, img21, img22, img23];
+export const carousel = [
+  {
+    thumbnail: img20,
+    embedId: 's6nrFDihaNg',
+  },
+  {
+    thumbnail: img21,
+    embedId: 'e8IthrzLP94',
+  },
+  {
+    thumbnail: img22,
+    embedId: 'EHzBhrncmac',
+  },
+  {
+    thumbnail: img23,
+    embedId: 'SlNpRThS9t8', //fJm2nD3cv_4
+  },
+];
 
 export const links = [
   { name: 'facebook', url: '#home' },

@@ -9,6 +9,8 @@ import {
   ThumbnailBg,
   PlayIcon,
 } from './Carousel.styles';
+import { Modal } from '../Modal/Modal';
+import { YoutubeEmbed } from '../YoutubeEmbed';
 
 const thumbnailBg = {
   initial: {
@@ -21,9 +23,9 @@ const thumbnailBg = {
   },
 };
 
-export const Carousel = ({ images }) => {
-  const [width, setWidth] = useState(0);
+export const Carousel = ({ images, launchModal }) => {
   const carousel = useRef();
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
@@ -41,10 +43,10 @@ export const Carousel = ({ images }) => {
             key={i}
             initial='initial'
             whileHover='hover'
-            onClick={() => console.log(`clicked ${i}`)}
+            onClick={() => launchModal(image.embedId)}
           >
             <Thumbnail>
-              <img src={image} alt='thumbnail' />
+              <img src={image.thumbnail} alt='thumbnail' />
             </Thumbnail>
             <ThumbnailOrder>
               <PlayIcon />

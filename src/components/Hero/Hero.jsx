@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RiMenu2Fill } from 'react-icons/ri';
 
 import bgImg from '../../assets/background.jpg';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { links, slides, carousel } from '../../data';
-import { WatchBtn, Slider, Carousel, Container } from '../../components';
+import {
+  WatchBtn,
+  Slider,
+  Carousel,
+  Container,
+  YoutubeEmbed,
+  Modal,
+} from '../../components';
 import {
   HeroWrapper,
   LeftSide,
@@ -19,8 +26,27 @@ import {
 } from './Hero.styles';
 
 export const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [embedId, setEmbedId] = useState('');
+
+  const handleShow = () => {
+    setShowModal(true);
+  };
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const launchModal = (embedId) => {
+    if (!embedId) return;
+    setEmbedId(embedId);
+    handleShow();
+  };
+
   return (
     <HeroWrapper id='home' bgImg={bgImg}>
+      <Modal showModal={showModal} handleClose={handleClose}>
+        <YoutubeEmbed embedId={embedId} />
+      </Modal>
       <Container>
         <LeftSide>
           <NavBar>
@@ -69,7 +95,7 @@ export const Hero = () => {
           <Slider images={slides} />
           <Trailers>
             <h2>Trailers</h2>
-            <Carousel images={carousel} />
+            <Carousel images={carousel} launchModal={launchModal} />
           </Trailers>
         </RightSide>
       </Container>
