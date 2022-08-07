@@ -2,8 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const VideoWrapper = styled.div`
-  width: 90%;
+  width: 100%;
   aspect-ratio: 16/9;
+
+  @media (min-width: 800px) {
+    width: 80%;
+  }
 `;
 
 const VideoIframe = styled.iframe`

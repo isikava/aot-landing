@@ -9,8 +9,6 @@ import {
   ThumbnailBg,
   PlayIcon,
 } from './Carousel.styles';
-import { Modal } from '../Modal/Modal';
-import { YoutubeEmbed } from '../YoutubeEmbed';
 
 const thumbnailBg = {
   initial: {
