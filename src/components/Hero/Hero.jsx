@@ -49,7 +49,11 @@ export const Hero = () => {
       </Modal>
       <Container>
         <LeftSide>
-          <NavBar>
+          <NavBar
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <Menu>
               <RiMenu2Fill size={'2em'} color={'#fff'} />
             </Menu>
@@ -58,7 +62,11 @@ export const Hero = () => {
             </a>
           </NavBar>
 
-          <Content>
+          <Content
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
             <Title>
               The
               <span>Final</span>
@@ -91,7 +99,11 @@ export const Hero = () => {
           </Content>
         </LeftSide>
 
-        <RightSide>
+        <RightSide
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
           <Slider images={slides} />
           <Trailers>
             <h2>Trailers</h2>

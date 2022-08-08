@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 /* Wrappers --> */
 export const HeroWrapper = styled.div`
@@ -53,7 +54,7 @@ export const LeftSide = styled.div`
   }
 `;
 
-export const RightSide = styled.div`
+export const RightSide = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -70,7 +71,7 @@ export const RightSide = styled.div`
 /* <-- Wrappers */
 
 /* Elements --> */
-export const NavBar = styled.div`
+export const NavBar = styled(motion.div)`
   display: flex;
   position: relative;
   margin: 3rem 0;
@@ -99,7 +100,7 @@ export const Menu = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
