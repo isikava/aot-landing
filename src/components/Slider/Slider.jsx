@@ -30,11 +30,25 @@ const SliderImage = styled.div`
 
 const Pagination = styled.div`
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
+  align-items: center;
   margin-top: 1rem;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 `;
 
-const Pages = styled.div``;
+const Page = styled.span`
+  font-family: var(--ff-medium);
+  font-size: 1.2rem;
+  line-height: 90%;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cr-text);
+  user-select: none;
+`;
 
 const Controls = styled.div`
   display: flex;
@@ -124,7 +138,7 @@ export const Slider = ({ images }) => {
             <MdArrowForwardIos />
           </Control>
         </Controls>
-        <Pages></Pages>
+        <Page>{imageIndex + 1}</Page>
       </Pagination>
     </SliderWrapper>
   );

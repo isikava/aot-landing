@@ -3,7 +3,7 @@ import styled from 'styled-components';
 /* Wrappers --> */
 export const HeroWrapper = styled.div`
   position: relative;
-  background: var(--gr-darkblue);
+  background: var(--grad-darkblue);
 
   &:before {
     position: fixed;
@@ -38,14 +38,12 @@ export const HeroWrapper = styled.div`
 `;
 
 export const LeftSide = styled.div`
-  /* flex: 1 1 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 3rem;
 
   @media (min-width: 800px) {
-    /* flex: 1; */
     padding-right: 1rem;
   }
 
@@ -83,18 +81,6 @@ export const NavBar = styled.div`
       width: 100%;
       max-width: 302px;
       height: auto;
-
-      path {
-        transition: 0.2s ease-in-out;
-      }
-
-      &:hover {
-        path {
-          fill: red;
-          filter: invert(0.5) sepia(1) hue-rotate(200deg) saturate(4)
-            brightness(1);
-        }
-      }
     }
   }
 
