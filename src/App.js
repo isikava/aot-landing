@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatePresence, useCycle } from 'framer-motion';
+import { useCycle } from 'framer-motion';
 import { Hero, Sidebar } from './components';
 
 function App() {
@@ -9,7 +9,6 @@ function App() {
     <>
       <Sidebar show={showSidebar} toggle={toggleSidebar} />
       <Hero toggleSidebar={toggleSidebar} />
-      <div>123</div>
     </>
   );
 }

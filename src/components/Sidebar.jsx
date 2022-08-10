@@ -35,9 +35,6 @@ const Nav = styled.nav`
       padding: 0.3rem 0;
     }
   }
-
-  @media (min-width: 500px) {
-  }
 `;
 
 const CloseIcon = styled(RiCloseFill)`

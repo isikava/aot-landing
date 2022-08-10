@@ -3,7 +3,7 @@ import { RiMenu2Fill } from 'react-icons/ri';
 
 import bgImg from '../../data/background.jpg';
 import { ReactComponent as Logo } from '../../data/logo.svg';
-import { links, slides, carousel } from '../../data/data';
+import { links, slides, carousel, description } from '../../data/data';
 import {
   WatchBtn,
   Slider,
@@ -75,17 +75,7 @@ export const Hero = ({ toggleSidebar }) => {
 
             <WatchBtn onClick={() => launchModal('SlNpRThS9t8')} />
 
-            <Description>
-              The fourth and final season of the Attack on Titan anime
-              television series, titled Attack on Titan: The Final Season, is{' '}
-              <span>produced by MAPPA</span>, chief directed by Jun Shishido,
-              and directed by Yūichirō Hayashi, replacing Tetsurō Araki and
-              Masashi Koizuka respectively. Scriptwriter{' '}
-              <span>Hiroshi Seko</span> took over the series composition from{' '}
-              <span>Yasuko Kobayashi</span>, and Tomohiro Kishi replaced Kyōji
-              Asano as character designer due to the series switching production
-              studios.
-            </Description>
+            <Description dangerouslySetInnerHTML={{ __html: description }} />
 
             <Links>
               {links.map((link, i) => (
