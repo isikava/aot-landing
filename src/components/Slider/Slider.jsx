@@ -6,11 +6,9 @@ import { MdArrowForwardIos } from 'react-icons/md';
 
 import { Control } from './Control';
 
-const SliderWrapper = styled.div`
-  width: 100%;
-`;
+const SliderWrapper = styled.div``;
 
-const SliderImage = styled.div`
+const Thumbnail = styled.div`
   width: 100%;
   aspect-ratio: 4 / 3;
   display: flex;
@@ -18,14 +16,14 @@ const SliderImage = styled.div`
   align-items: center;
   position: relative;
   overflow: hidden;
+`;
 
-  img {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+const Image = styled(motion.img)`
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const Pagination = styled.div`
@@ -99,35 +97,48 @@ export const Slider = ({ images }) => {
 
   return (
     <SliderWrapper>
-      <SliderImage>
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.img
-            src={images[imageIndex].cropped}
-            key={page}
-            custom={direction}
-            variants={variants}
-            initial='enter'
-            animate='center'
-            exit='exit'
-            transition={{
-              x: { type: 'string', stifness: 300, damping: 300 },
-              opacity: { duration: 0.5 },
-            }}
-            drag='x'
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
+      <a href={images[imageIndex].original} draggable={false}>
+        <Thumbnail>
+          <AnimatePresence initial={false} custom={direction}>
+            <Image
+              src={images[imageIndex].cropped}
+              key={page}
+              custom={direction}
+              variants={variants}
+              initial='enter'
+              animate='center'
+              exit='exit'
+              transition={{
+                x: { type: 'string', stifness: 300, damping: 300 },
+                opacity: { duration: 0.5 },
+              }}
+              drag='x'
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={1}
+              onDragEnd={(event, { offset, velocity }) => {
+                // Prevent click after drag
+                if (event instanceof MouseEvent) {
+                  event.target?.addEventListener(
+                    'click',
+                    (e) => {
+                      e.preventDefault();
+                    },
+                    { once: true }
+                  );
+                }
 
-              if (swipe < -swipeConfidenceThreshold) {
-                paginate(1);
-              } else if (swipe > swipeConfidenceThreshold) {
-                paginate(-1);
-              }
-            }}
-          />
-        </AnimatePresence>
-      </SliderImage>
+                const swipe = swipePower(offset.x, velocity.x);
+
+                if (swipe < -swipeConfidenceThreshold) {
+                  paginate(1);
+                } else if (swipe > swipeConfidenceThreshold) {
+                  paginate(-1);
+                }
+              }}
+            />
+          </AnimatePresence>
+        </Thumbnail>
+      </a>
 
       <Pagination>
         <Controls>

@@ -34,6 +34,18 @@ export const Carousel = ({ images, launchModal }) => {
       <InnerCarousel
         drag='x'
         dragConstraints={{ right: 0, left: -width }}
+        onDragEnd={(event) => {
+          // Prevent click after drag
+          if (event instanceof MouseEvent) {
+            event.target?.addEventListener(
+              'click',
+              (e) => {
+                e.stopPropagation();
+              },
+              { once: true }
+            );
+          }
+        }}
         whileTap={{ cursor: 'grabbing' }}
       >
         {images?.map((image, i) => (
@@ -41,6 +53,7 @@ export const Carousel = ({ images, launchModal }) => {
             key={i}
             initial='initial'
             whileHover='hover'
+            whileTap={{ cursor: 'grabbing' }}
             onClick={() => launchModal(image.embedId)}
           >
             <Thumbnail>
