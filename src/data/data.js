@@ -1,9 +1,9 @@
-import img20 from './assets/20.jpg';
-import img21 from './assets/21.jpg';
-import img22 from './assets/22.jpg';
-import img23 from './assets/23.jpg';
+import img20 from './20.jpg';
+import img21 from './21.jpg';
+import img22 from './22.jpg';
+import img23 from './23.jpg';
 
-import gif from './assets/eren.gif';
+import gif from './eren.gif';
 
 const publicFolder = `${process.env.PUBLIC_URL}/img`;
 
@@ -47,4 +47,11 @@ export const links = [
   { name: 'twitter', url: '#home' },
   { name: 'instagram', url: '#home' },
   { name: 'youtube', url: '#home' },
+];
+
+export const navLinks = [
+  { name: 'home', url: '#home' },
+  { name: 'about', url: '#about' },
+  { name: 'contacts', url: '#contacts' },
+  { name: 'faq', url: '#faq' },
 ];

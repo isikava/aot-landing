@@ -94,6 +94,7 @@ export const Menu = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  cursor: pointer;
 
   @media (min-width: 1200px) {
     left: -60px;

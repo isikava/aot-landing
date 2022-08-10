@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { RiMenu2Fill } from 'react-icons/ri';
 
-import bgImg from '../../assets/background.jpg';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
-import { links, slides, carousel } from '../../data';
+import bgImg from '../../data/background.jpg';
+import { ReactComponent as Logo } from '../../data/logo.svg';
+import { links, slides, carousel } from '../../data/data';
 import {
   WatchBtn,
   Slider,
@@ -25,7 +25,7 @@ import {
   Trailers,
 } from './Hero.styles';
 
-export const Hero = () => {
+export const Hero = ({ toggleSidebar }) => {
   const [showModal, setShowModal] = useState(false);
   const [embedId, setEmbedId] = useState('');
 
@@ -54,7 +54,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Menu>
+            <Menu onClick={toggleSidebar}>
               <RiMenu2Fill size={'2em'} color={'#fff'} />
             </Menu>
             <a href='#home' alt='Logo'>
