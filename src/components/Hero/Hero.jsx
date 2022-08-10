@@ -73,7 +73,7 @@ export const Hero = () => {
               <span>Season</span>
             </Title>
 
-            <WatchBtn />
+            <WatchBtn onClick={() => launchModal('SlNpRThS9t8')} />
 
             <Description>
               The fourth and final season of the Attack on Titan anime

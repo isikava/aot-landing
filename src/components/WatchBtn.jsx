@@ -75,9 +75,9 @@ const circle = {
   },
 };
 
-export const WatchBtn = () => {
+export const WatchBtn = ({ onClick }) => {
   return (
-    <Wrapper initial='initial' whileHover='hover'>
+    <Wrapper initial='initial' whileHover='hover' onClick={onClick}>
       <AnimateIcon variants={play} transition={{ ease: 'backInOut' }}>
         <PlayIcon />
         <PlayCircle variants={circle} transition={{ ease: 'easeInOut' }} />
