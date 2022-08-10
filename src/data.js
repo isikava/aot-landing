@@ -1,6 +1,6 @@
-import img20 from './assets/20c.jpg';
-import img21 from './assets/21c.jpg';
-import img22 from './assets/22c.jpg';
+import img20 from './assets/20.jpg';
+import img21 from './assets/21.jpg';
+import img22 from './assets/22.jpg';
 import img23 from './assets/23.jpg';
 
 import gif from './assets/eren.gif';

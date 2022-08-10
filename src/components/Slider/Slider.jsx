@@ -1,64 +1,18 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { wrap } from '@popmotion/popcorn';
-import { MdArrowForwardIos } from 'react-icons/md';
 
 import { Control } from './Control';
-
-const SliderWrapper = styled.div``;
-
-const Thumbnail = styled.div`
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-`;
-
-const Image = styled(motion.img)`
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const Pagination = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-
-  @media (min-width: 800px) {
-    flex-direction: row;
-  }
-`;
-
-const Page = styled.span`
-  font-family: var(--ff-medium);
-  font-size: 1.2rem;
-  line-height: 90%;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--cr-text);
-  user-select: none;
-`;
-
-const Controls = styled.div`
-  display: flex;
-
-  & > * + * {
-    margin-left: 10px;
-  }
-`;
-
-const ArrowBackwardIcon = styled(MdArrowForwardIos)`
-  transform: scale(-1);
-`;
+import {
+  SliderWrapper,
+  Thumbnail,
+  Image,
+  Pagination,
+  Page,
+  Controls,
+  MdArrowForwardIos,
+  ArrowBackwardIcon,
+} from './Slider.style';
 
 const variants = {
   enter: (direction) => {
