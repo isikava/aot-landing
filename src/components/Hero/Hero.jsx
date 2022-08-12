@@ -25,6 +25,10 @@ import {
   Trailers,
 } from './Hero.styles';
 
+const transition = {
+  duration: 1,
+};
+
 export const Hero = ({ toggleSidebar }) => {
   const [showModal, setShowModal] = useState(false);
   const [embedId, setEmbedId] = useState('');
@@ -65,7 +69,7 @@ export const Hero = ({ toggleSidebar }) => {
           <Content
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={transition}
           >
             <Title>
               The
@@ -92,7 +96,7 @@ export const Hero = ({ toggleSidebar }) => {
         <RightSide
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={transition}
         >
           <Slider images={slides} />
           <Trailers>
