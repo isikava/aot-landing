@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/aot-landing/static/css/main.c87e68cd.css",
-    "main.js": "/aot-landing/static/js/main.2dc1633c.js",
+    "main.css": "/aot-landing/static/css/main.8ca7e932.css",
+    "main.js": "/aot-landing/static/js/main.532bc3f2.js",
     "static/media/eren.gif": "/aot-landing/static/media/eren.f91394377968ab82e79a.gif",
     "static/media/background.jpg": "/aot-landing/static/media/background.e2ba5a0e2cc8137792ef.jpg",
     "static/media/21.jpg": "/aot-landing/static/media/21.43b406f2618e28beccad.jpg",
@@ -10,11 +10,11 @@
     "static/media/20.jpg": "/aot-landing/static/media/20.e9b461c67088a363d75a.jpg",
     "static/media/23.jpg": "/aot-landing/static/media/23.64bb0af99639437a50d1.jpg",
     "index.html": "/aot-landing/index.html",
-    "main.c87e68cd.css.map": "/aot-landing/static/css/main.c87e68cd.css.map",
-    "main.2dc1633c.js.map": "/aot-landing/static/js/main.2dc1633c.js.map"
+    "main.8ca7e932.css.map": "/aot-landing/static/css/main.8ca7e932.css.map",
+    "main.532bc3f2.js.map": "/aot-landing/static/js/main.532bc3f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.c87e68cd.css",
-    "static/js/main.2dc1633c.js"
+    "static/css/main.8ca7e932.css",
+    "static/js/main.532bc3f2.js"
   ]
 }
