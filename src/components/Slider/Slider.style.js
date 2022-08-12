@@ -34,7 +34,7 @@ export const Pagination = styled.div`
 `;
 
 export const Page = styled.span`
-  font-family: var(--ff-medium);
+  font-weight: var(--fw-medium);
   font-size: 1.2rem;
   line-height: 90%;
   letter-spacing: 0.15em;

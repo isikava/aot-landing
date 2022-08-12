@@ -47,7 +47,7 @@ export const ThumbnailOrder = styled.div`
   font-size: 2rem;
 
   span {
-    font-family: var(--ff-medium);
+    font-weight: var(--fw-medium);
     font-size: 18px;
     line-height: 90%;
     letter-spacing: -0.01em;

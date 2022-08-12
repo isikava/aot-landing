@@ -116,7 +116,7 @@ export const Content = styled(motion.div)`
 `;
 
 export const Title = styled.h1`
-  font-family: var(--ff-light);
+  font-weight: var(--fw-light);
   font-size: 4rem;
   line-height: 90%;
   letter-spacing: -0.01rem;
@@ -129,11 +129,11 @@ export const Title = styled.h1`
   }
 
   & span:first-of-type {
-    font-family: var(--ff-bold);
+    font-weight: var(--fw-black);
     font-style: italic;
   }
   & span:nth-of-type(2) {
-    font-family: var(--ff-medium);
+    font-weight: var(--fw-medium);
   }
 
   @media (min-width: 1000px) {
@@ -147,17 +147,15 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  font-family: var(--ff-light);
-  font-weight: 300;
+  font-weight: var(--fw-light);
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.04em;
-  color: #d7ddef;
+  color: var(--cr-text-accent);
   margin-bottom: 2rem;
 
   span {
-    font-family: var(--ff-medium);
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     color: var(--cr-text);
   }
 
@@ -174,8 +172,7 @@ export const Links = styled.ul`
   flex-wrap: wrap;
 
   li {
-    font-family: var(--ff-medium);
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     font-size: 9px;
     line-height: 90%;
     letter-spacing: 0.25em;
@@ -192,7 +189,7 @@ export const Links = styled.ul`
 
 export const Trailers = styled.div`
   h2 {
-    font-family: var(--ff-medium);
+    font-weight: var(--fw-medium);
     font-size: 1.5rem;
     line-height: 90%;
     color: var(--cr-text);

@@ -28,7 +28,7 @@ const Nav = styled.nav`
     align-items: flex-end;
 
     li {
-      font-family: var(--ff-light);
+      font-weight: var(--fw-light);
       font-size: 2rem;
       text-transform: capitalize;
       color: #fff;
