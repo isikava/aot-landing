@@ -1,23 +1,34 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { RiPlayLine } from 'react-icons/ri';
 
 import {
   CarouselWrapper,
   InnerCarousel,
-  ThumbnailContainer,
+  ThumbnailWrapper,
   Thumbnail,
+  Image,
   ThumbnailOrder,
   ThumbnailBg,
   PlayIcon,
 } from './Carousel.styles';
 
-const thumbnailBg = {
+const transition = {
+  duration: 0.2,
+};
+
+const thumbnailVariants = {
+  hover: {
+    width: 230,
+    height: 160,
+  },
+};
+
+const iconVariants = {
   initial: {
-    x: 9,
-    y: 9,
+    opacity: 0,
   },
   hover: {
-    x: 5,
-    y: 5,
+    opacity: 1,
   },
 };
 
@@ -49,22 +60,23 @@ export const Carousel = ({ images, launchModal }) => {
         whileTap={{ cursor: 'grabbing' }}
       >
         {images?.map((image, i) => (
-          <ThumbnailContainer
-            key={i}
-            initial='initial'
-            whileHover='hover'
-            whileTap={{ cursor: 'grabbing' }}
-            onClick={() => launchModal(image.embedId)}
-          >
-            <Thumbnail>
-              <img src={image.thumbnail} alt='thumbnail' />
+          <ThumbnailWrapper key={image.id}>
+            <Thumbnail
+              initial='initial'
+              whileHover='hover'
+              whileTap={{ cursor: 'grabbing' }}
+              variants={thumbnailVariants}
+              transition={transition}
+              onClick={() => launchModal(image.embedId)}
+            >
+              <Image src={image.thumbnail} />
+              <ThumbnailOrder># {i + 1}</ThumbnailOrder>
+              <PlayIcon variants={iconVariants} transition={transition}>
+                <RiPlayLine />
+              </PlayIcon>
             </Thumbnail>
-            <ThumbnailOrder>
-              <PlayIcon />
-              <span># {i + 1}</span>
-            </ThumbnailOrder>
-            <ThumbnailBg variants={thumbnailBg} />
-          </ThumbnailContainer>
+            <ThumbnailBg />
+          </ThumbnailWrapper>
         ))}
       </InnerCarousel>
     </CarouselWrapper>

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { RiPlayLine } from 'react-icons/ri';
 
 export const CarouselWrapper = styled(motion.div)`
   cursor: grab;
@@ -14,58 +13,59 @@ export const InnerCarousel = styled(motion.div)`
   gap: 30px;
 `;
 
-export const ThumbnailContainer = styled(motion.div)`
-  min-width: 220px;
+export const ThumbnailWrapper = styled.div`
+  min-width: 230px;
   min-height: 160px;
   position: relative;
-  cursor: pointer;
 `;
 
-export const Thumbnail = styled.div`
+export const Thumbnail = styled(motion.div)`
   width: 220px;
   height: 150px;
   overflow: hidden;
+  position: relative;
   border-radius: 10px 0px 30px;
-
-  img {
-    width: 101%;
-    height: 101%;
-    object-fit: cover;
-    pointer-events: none;
-  }
 `;
 
-export const ThumbnailOrder = styled.div`
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 1rem;
-  left: 0.4rem;
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+`;
 
+export const ThumbnailOrder = styled.span`
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.8rem;
+
+  font-size: 2rem;
+  font-weight: var(--fw-medium);
+  font-size: 18px;
+  line-height: 90%;
+  letter-spacing: -0.01em;
   color: #ffffff;
   text-shadow: 0px 4px 23px rgba(0, 0, 0, 0.74);
-  font-size: 2rem;
-
-  span {
-    font-weight: var(--fw-medium);
-    font-size: 18px;
-    line-height: 90%;
-    letter-spacing: -0.01em;
-  }
 `;
 
-export const PlayIcon = styled(RiPlayLine)`
-  font-size: 2rem;
+export const PlayIcon = styled(motion.span)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
   color: #fff;
+  cursor: pointer;
+  z-index: 1;
 `;
 
-export const ThumbnailBg = styled(motion.div)`
+export const ThumbnailBg = styled.div`
   width: 220px;
   height: 150px;
   border-radius: 10px 0px 30px;
   background: rgba(255, 255, 255, 0.1);
   position: absolute;
-  top: 0;
-  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: -1;
 `;
