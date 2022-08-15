@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/aot-landing/static/css/main.8ca7e932.css",
-    "main.js": "/aot-landing/static/js/main.532bc3f2.js",
+    "main.js": "/aot-landing/static/js/main.36140bae.js",
     "static/media/eren.gif": "/aot-landing/static/media/eren.f91394377968ab82e79a.gif",
     "static/media/background.jpg": "/aot-landing/static/media/background.e2ba5a0e2cc8137792ef.jpg",
     "static/media/21.jpg": "/aot-landing/static/media/21.43b406f2618e28beccad.jpg",
@@ -11,10 +11,10 @@
     "static/media/23.jpg": "/aot-landing/static/media/23.64bb0af99639437a50d1.jpg",
     "index.html": "/aot-landing/index.html",
     "main.8ca7e932.css.map": "/aot-landing/static/css/main.8ca7e932.css.map",
-    "main.532bc3f2.js.map": "/aot-landing/static/js/main.532bc3f2.js.map"
+    "main.36140bae.js.map": "/aot-landing/static/js/main.36140bae.js.map"
   },
   "entrypoints": [
     "static/css/main.8ca7e932.css",
-    "static/js/main.532bc3f2.js"
+    "static/js/main.36140bae.js"
   ]
 }
