@@ -4,6 +4,8 @@
 
 This is my React implementation of Attack on Titan site based on [this design](https://www.figma.com/community/file/940292732202670640)
 
+[LIVE](https://alexign473.github.io/aot-landing/)
+
 ## 🎈 Features
 
 - Draggable Slider gallery and Carousel
