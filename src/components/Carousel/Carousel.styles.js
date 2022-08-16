@@ -10,7 +10,7 @@ export const CarouselWrapper = styled(motion.div)`
 
 export const InnerCarousel = styled(motion.div)`
   display: flex;
-  gap: 30px;
+  gap: 21px;
 `;
 
 export const ThumbnailWrapper = styled.div`
